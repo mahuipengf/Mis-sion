@@ -1,0 +1,26 @@
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('./src/font/riluorenjianlujing.ttf') format('truetype');
+      /* url('./src//font//zhuizhuxiatianhelanghua.ttf') format('ttf'); */
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HanTi';
+    src: url('./src/font/chaodouzhapinggunshihei.ttf') format('truetype');
+      /* url('./src//font//zhuizhuxiatianhelanghua.ttf') format('ttf'); */
+    font-weight: 600;
+    font-style: normal;
+}
+  
+  
+.font-family {
+    font-family: 'MyFont';
+    color: aqua;
+}
+.font-han {
+    font-family: 'HanTi';
+    color: #000;
+}

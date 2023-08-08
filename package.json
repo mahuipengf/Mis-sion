@@ -1,0 +1,29 @@
+{
+  "name": "start-h",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "rm -rf ./dist & webpack --config webpack.config.js",
+    "start": "webpack server --open",
+    "server": "node server.js",
+    "dev_build": "webpack --config webpack.config.js --mode development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "webpack": "^5.88.2",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-middleware": "^6.1.1",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
+  }
+}
