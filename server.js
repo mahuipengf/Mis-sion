@@ -5,6 +5,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const app = express();
 const config = require('./webpack.config.js');
 const compiler = webpack(config);
+const webpackDevServer = require('webpack-dev-server');
 
 // 告知 express 使用 webpack-dev-middleware，
 // 以及将 webpack.config.js 配置文件作为基础配置。

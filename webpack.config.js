@@ -1,4 +1,5 @@
 const path = require('path');
+// const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -10,10 +11,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: `start-h-[chunkhash].js`,
+    filename: `mis-sion-[chunkhash].js`,
     // clear: true,
   },
-  devtool: 'inline-source-map', // inline-source-map 本地开发时启用可准确找到打包报错文件
+  devtool: 'inline-source-map', // inline-source-map 本地开发时启用可准确找到打包报错文件 source-map生产环境使用
   mode: 'development',
   module: {
     rules: [
@@ -22,7 +23,10 @@ module.exports = {
         use: [
           {
             loader: 'style-loader',
-            options: { injectType: 'singletonStyleTag' },
+            options: { 
+              injectType: 'singletonStyleTag',
+              // modules: true,
+            },
           },
           'css-loader',
         ],
@@ -53,9 +57,12 @@ module.exports = {
       template: './index.html', // 更改文件
     //   filename: 'demo.html', // 打包后新文件
     }),
-    // new MiniCssExtractPlugin({
-    //     filename: 'css/start-h-[chunkhash].css' // 重命名css文件
-    // }), // 使用MiniCssExtractPlugin 插件提取css文件
+    new MiniCssExtractPlugin({
+        filename: 'css/mis-sion-[chunkhash].css' // 重命名css文件
+    }), // 使用MiniCssExtractPlugin 插件提取css文件
+    // new webpack.ProvidePlugin({ // 全局使用该包的方法
+    //   _: 'lodash',
+    // }),
   ],
   devServer: {
     static: path.resolve(__dirname, 'dist'),
@@ -67,5 +74,9 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: 'single',
-  }
+  },
+  // stats: {
+  //   groupModulesByLayer: true, // 是否按模块的layer
+  //   colors: true,
+  // },
 };
